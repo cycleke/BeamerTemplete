@@ -1,0 +1,74 @@
+\frame[plain]{\titlepage}
+\frame{\frametitle{Outline}\tableofcontents}
+
+\section{Introduction}
+
+\begin{frame}
+  \frametitle{Introduction}
+  
+  \begin{itemize}
+  \item<1-> This is just a short example
+  \item<2-> It works with xeLaTeX
+  \end{itemize}
+\end{frame}
+
+\section{Background}
+
+\begin{frame}
+  \frametitle{Background}
+
+  \begin{block}{Slides with \LaTeX}
+    Beamer offers a lot of functions to create nice slides using \LaTeX.
+  \end{block}
+
+  \begin{block}{The basis}
+    This style uses the following default styles:
+    \begin{itemize}
+    \item split
+    \item whale
+    \item rounded
+    \item orchid
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\section{Chinese}
+
+\begin{frame}
+  \frametitle{中文}
+
+  \begin{itemize}
+  \item 本主题支持中文。
+  \end{itemize}
+\end{frame}
+
+\section{Code Block}
+
+\begin{frame}
+  \frametitle{Code Block}
+  \lstinputlisting[
+  lastline=10,
+  language=Python,
+  frame=single,
+  caption={Test Code}
+  label=python]
+  {test.py}
+\end{frame}
+
+\section{Algorithm}
+
+\begin{frame}
+  \begin{algorithm}[H]
+    \caption{HOSVD}
+    \small 
+    \KwIn{HOSVD($\mathcal{X},R_{1},R_{2}.....R_{N}$) }
+    \KwOut{ $\mathcal{G},A_{(1)},A_{(2)}......A_{(N)} $ }
+    
+    \For{$k=1$ to $N$ }
+    {
+      $A_{(n)}\leftarrow R_{n}$left singular matrix of $X_{(n)}$
+    }
+    $\mathcal{G}=\leftarrow \mathcal{X} \times A_{(1)}^{T} \times A_{(2)}^{T}...... \times A_{(N)}^{T}$\\
+    \Return $\mathcal{G},A_{(1)},A_{(2)}......A_{(N)} $
+  \end{algorithm}
+\end{frame}
