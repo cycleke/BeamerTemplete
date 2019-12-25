@@ -2,10 +2,11 @@
 \usepackage{amsmath}
 \usepackage[english]{babel}
 \usepackage{bookmark}
-\usepackage{booktabs}
+\usepackage{booktabs} %% 这个生成的表格比较好看,里面严禁使用竖线。
 \usepackage{colortbl,dcolumn}     %% 彩色表格
-\usepackage{fancyhdr}        % header footer
+\usepackage{fancyhdr}        %% header footer
 \usepackage{graphicx}
+\usepackage{hyperref}
 \usepackage{listings}
 \usepackage{newtxmath}
 \usepackage{palatino}
@@ -14,7 +15,6 @@
 \usepackage{subfigure} %%图形或表格并排排列
 \usepackage{tikz}
 \usepackage{times}
-\usepackage{url}
 \usepackage{xcolor}
 \usepackage[BoldFont,SlantFont,CJKchecksingle]{xeCJK}
 
@@ -26,29 +26,29 @@
 % \renewcommand\CJKfamilydefault{\CJKsfdefault}
 \newcommand{\rmnum}[1]{\romannumeral #1}
 \newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
-\setCJKmainfont[BoldFont=SimHei]{SimSun}
-\setCJKmonofont{SimSun}% 设置缺省中文字体
-\setsansfont{GoMono Nerd Font}
-\setmainfont{GoMono Nerd Font}
+\setCJKmainfont[BoldFont=SimHei]{SimHei}
+\setCJKmonofont{SimHei}% 设置缺省中文字体
+\setsansfont{Arial}
+\setmainfont{Arial}
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
 \newcommand{\Console}{Console}
 \lstset{ %
-	backgroundcolor=\color{white},   % choose the background color
-	basicstyle=\footnotesize\rmfamily,     % size of fonts used for the code
-	columns=fullflexible,
-	breaklines=true,                 % automatic line breaking only at whitespace
-	captionpos=b,                    % sets the caption-position to bottom
-	tabsize=4,
-	commentstyle=\color{mygreen},    % comment style
-	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
-	keywordstyle=\color{blue},       % keyword style
-	stringstyle=\color{mymauve}\ttfamily,     % string literal style
-	% numbers=left, 
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize\rmfamily,     % size of fonts used for the code
+  columns=fullflexible,
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  tabsize=4,
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve}\ttfamily,     % string literal style
+  % numbers=left,
   %	frame=single,
-	rulesepcolor=\color{red!20!green!20!blue!20},
-	% identifierstyle=\color{red},
-	language=c
+  rulesepcolor=\color{red!20!green!20!blue!20},
+  % identifierstyle=\color{red},
+  language=c
 }
