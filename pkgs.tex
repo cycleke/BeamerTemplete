@@ -15,12 +15,15 @@
 \usepackage{subfigure} %%图形或表格并排排列
 \usepackage{tikz}
 \usepackage{times}
+\usepackage{ulem}
 \usepackage{xcolor}
 \usepackage[BoldFont,SlantFont,CJKchecksingle]{xeCJK}
 
-\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary{shapes.geometric, arrows, patterns, positioning}
 
 \graphicspath{{figures/}}         %% 图片路径. 本文的图片都放在这个文件夹里了.
+\allowdisplaybreaks
+\setlength{\parindent}{2em}
 
 \makeatletter
 % \renewcommand\CJKfamilydefault{\CJKsfdefault}
@@ -47,7 +50,7 @@
   keywordstyle=\color{blue},       % keyword style
   stringstyle=\color{mymauve}\ttfamily,     % string literal style
   % numbers=left,
-  %	frame=single,
+  % frame=single,
   rulesepcolor=\color{red!20!green!20!blue!20},
   % identifierstyle=\color{red},
   language=c
