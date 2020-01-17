@@ -1,11 +1,11 @@
 \frame[plain]{\titlepage}
-\frame{\frametitle{Outline}\tableofcontents}
+\frame{\frametitle{Outline}\tableofcontents[hideallsubsections]}
 
 \section{Introduction}
 
 \begin{frame}
   \frametitle{Introduction}
-  
+
   \begin{itemize}
   \item<1-> This is just a short example
   \item<2-> It works with xeLaTeX
@@ -44,15 +44,39 @@
 
 \section{Code Block}
 
+\subsection{Python}
 \begin{frame}
-  \frametitle{Code Block}
+  \frametitle{Python}
   \lstinputlisting[
   lastline=10,
   language=Python,
   frame=single,
-  caption={Test Code}
+  caption={Python Code}
   label=python]
   {test.py}
+\end{frame}
+
+\subsection{C++}
+\begin{frame}[fragile]
+  \frametitle{C++}
+  \begin{lstlisting}[language=c++,frame=single,label=c++,caption={C++ Code}]
+void DifferentThing(const std::string &s) {
+  std::cout << "DifferentThing " << s << std::endl;
+}
+
+int main (int argc, char *argv[]){
+  if (argc > 2) {
+    std::string param1(argv[1]);
+    std::string param2(argv[2]);
+
+    if (param1 == "function1")
+    std::cout << param2 << std::endl;
+    else if (param1 == "function2")
+    DifferentThing(param2);
+  }
+  return 0;
+}
+  \end{lstlisting}
 \end{frame}
 
 \section{Algorithm}
@@ -60,10 +84,10 @@
 \begin{frame}
   \begin{algorithm}[H]
     \caption{HOSVD}
-    \small 
+    \small
     \KwIn{HOSVD($\mathcal{X},R_{1},R_{2}.....R_{N}$) }
     \KwOut{ $\mathcal{G},A_{(1)},A_{(2)}......A_{(N)} $ }
-    
+
     \For{$k=1$ to $N$ }
     {
       $A_{(n)}\leftarrow R_{n}$left singular matrix of $X_{(n)}$
