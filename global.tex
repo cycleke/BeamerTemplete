@@ -5,13 +5,14 @@
 \institute{Harbin Institute of Technology \\ School of Computer Science and Technology}
 \date{\today}
 
-\AtBeginSection[]{
-  \frame{
-    \frametitle{Outline}
-    \tableofcontents[currentsection,hideothersubsections]
-  }
-}
+% \AtBeginSection[]{
+%   \frame{
+%     \frametitle{Outline}
+%     \tableofcontents[currentsection,hideothersubsections]
+%   }
+% }
 
-\titlegraphic{\includegraphics[width=4cm]{school}}
-\pgfdeclareimage[height=.8cm]{logo}{school}
-% \logo{\pgfuseimage{logo}}
+\titlegraphic{\includegraphics[width=4cm]{figures/school}}
+\pgfdeclaremask{figmask}{figures/hitlogo-mask.jpg}
+\pgfdeclareimage[mask=figmask,width=0.8cm,interpolate=true]{hitlogomasked}{figures/hitlogo.jpg}
+\logo{\pgfuseimage{hitlogomasked}}
