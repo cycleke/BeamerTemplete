@@ -5,7 +5,7 @@ empty:
 	xelatex -shell-escape main.tex
 	xelatex -shell-escape main.tex
 save:
-	mv main.pdf main_beamer.pdf
+	mv main.pdf Slide.pdf
 clean:
 	@echo Done.
 	-find -name '*.aux' -exec rm -f {} \;
