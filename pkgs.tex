@@ -4,57 +4,71 @@
 \usepackage{bookmark}
 \usepackage{booktabs} %% 这个生成的表格比较好看,里面严禁使用竖线。
 \usepackage{colortbl,dcolumn}     %% 彩色表格
+\usepackage{environ}
 \usepackage{fancyhdr}        %% header footer
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{listings}
 \usepackage{multimedia}
+\usepackage{multicol,multienum}
 \usepackage{newtxmath}
 \usepackage{palatino}
 \usepackage{pgf}
 \usepackage{pgfpages}
+\usepackage{pifont}
+\usepackage{siunitx}
 \usepackage{subfigure} %%图形或表格并排排列
+\usepackage{tabularx}
 \usepackage{tikz}
 \usepackage{times}
 \usepackage{ulem}
+\usepackage{varwidth}
 \usepackage{xcolor}
 \usepackage[BoldFont,SlantFont,CJKchecksingle]{xeCJK}
+\usepackage{xltxtra}
+\usepackage{xunicode}
 
-\usetikzlibrary{shapes.geometric, arrows, patterns, positioning}
+\usetikzlibrary{chains}
 
 \graphicspath{{figures/}}         %% 图片路径. 本文的图片都放在这个文件夹里了.
 \allowdisplaybreaks{}
 \setlength{\parindent}{2em}
 
 \makeatletter
-% \renewcommand\CJKfamilydefault{\CJKsfdefault}
 \newcommand{\rmnum}[1]{\romannumeral#1}
 \newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral#1@}
-\setCJKmainfont[BoldFont=SimHei]{SimHei}
-\setCJKmonofont{SimHei}% 设置缺省中文字体
-\setsansfont{Arial}
-\setmainfont{Arial}
+
+\usefonttheme[onlymath]{serif}
+\setCJKfamilyfont{hei}{SimHei}
+\newcommand{\hei}{\CJKfamily{hei}}
+\setCJKfamilyfont{siyuan}{SourceHanSerifCN-Regular}
+\newcommand{\sy}{\CJKfamily{siyuan}}
+\defaultfontfeatures{Mapping=tex-text}
+\setCJKmainfont[BoldFont=SourceHanSansCN-Bold]{SourceHanSerifCN-Regular}
+\setCJKsansfont[BoldFont=SourceHanSansCN-Bold]{SourceHanSerifCN-Regular}
+\setCJKmonofont[BoldFont=SourceHanSansCN-Bold]{SourceHanSerifCN-Regular}
+\setsansfont{SF Pro Display}
+\setmainfont{Serif UI Display}
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
 \newcommand{\Console}{Console}
-\lstset{ %
+\lstset{
   % backgroundcolor=\color{white},   % choose the background color
-  basicstyle=\footnotesize\rmfamily,     % size of fonts used for the code
+  basicstyle=\footnotesize\ttfamily, % size of fonts used for the code
   columns=fullflexible,
   breaklines=true,                 % automatic line breaking only at whitespace
   captionpos=b,                    % sets the caption-position to bottom
-  tabsize=4,
+  tabsize=2,
   commentstyle=\color{mygreen},    % comment style
   escapeinside={\%*}{*\)},          % if you want to add LaTeX within your code
   keywordstyle=\color{blue},       % keyword style
   stringstyle=\color{mymauve}\ttfamily,     % string literal style
   % numbers=left,
-  % frame=single,
+  frame=single,
   rulesepcolor=\color{red!20!green!20!blue!20},
-  % identifierstyle=\color{red},
-  language=c
+  % identifierstyle=\color{red}
 }
 
 \definecolor{color1}{rgb}{0.22,0.45,0.70}  % light blue
@@ -62,5 +76,24 @@
 
 %% 进度条
 \newcommand{\progressbar}[2][2cm]{%
-    \textcolor{color1}{\rule{#1 * \real{#2} / 100}{1.5ex}}%
-    \textcolor{color2!15}{\rule{#1-#1 * \real{#2} / 100}{1.5ex}}}
+  \textcolor{color1}{\rule{#1 * \real{#2} / 100}{1.5ex}}%
+  \textcolor{color2!15}{\rule{#1-#1 * \real{#2} / 100}{1.5ex}}}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,
+  urlcolor=cyan,
+}
+
+
+\setbeamertemplate{theorems}[numbered]
+\newtheorem{mythl}{\hei{引理}}[section]
+\newtheorem{mytht}{\hei{定理}}[section]
+\newtheorem{mythr}{\hei{注}}[section]
+\newtheorem{mythc}{\hei{推论}}[section]
+\newtheorem{mythd}{\hei{定义}}[section]
+\newtheorem{mytha}{\hei{公理}}
+\newtheorem{mythp}{\hei{命题}}
+\newtheorem{mythe}{\hei{练习}}
+\newtheorem{myli}{\hei{例}}[section]
